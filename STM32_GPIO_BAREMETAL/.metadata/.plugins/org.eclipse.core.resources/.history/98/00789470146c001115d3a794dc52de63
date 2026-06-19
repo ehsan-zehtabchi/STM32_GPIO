@@ -5,7 +5,8 @@
  *      Author: Zehta
  */
 
-#include "STM32F4xx.h"
+#include "stm32f4xx.h"
+
 void LED_init (void)
 {
     // Enable GPIOA clock

@@ -95,7 +95,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    LED_Blink_Fast(); // Blink the LED fast
+    //LED_Blink_Fast(); // Blink the LED fast
     //output_state_PB8 = OUTPUT_PB8_Blink_Fast(); // Blink the OUTPUT PB8 fast
     //output_state_PC7 = OUTPUT_PC7_Blink_Fast(); // Blink the OUTPUT PC7 fast
     Police_Blink_Fast(); // Blink the OUTPUT PC7 and PB8 in a police light pattern

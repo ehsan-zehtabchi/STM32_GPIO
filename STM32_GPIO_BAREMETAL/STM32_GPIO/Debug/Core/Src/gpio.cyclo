@@ -1,2 +1,7 @@
 ../Core/Src/gpio.c:9:6:LED_init	1
-../Core/Src/gpio.c:29:6:LED_Blink_Fast	2
+../Core/Src/gpio.c:29:6:OUTPUT_init_PB8	1
+../Core/Src/gpio.c:49:6:OUTPUT_init_PC7	1
+../Core/Src/gpio.c:69:6:LED_Blink_Fast	2
+../Core/Src/gpio.c:74:9:OUTPUT_PB8_Blink_Fast	2
+../Core/Src/gpio.c:80:9:OUTPUT_PC7_Blink_Fast	2
+../Core/Src/gpio.c:86:6:Police_Blink_Fast	3

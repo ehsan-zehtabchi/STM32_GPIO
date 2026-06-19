@@ -1,0 +1,39 @@
+/*
+ * gpio.c
+ *
+ *  Created on: 11 Jun 2026
+ *      Author: Zehta
+ */
+
+#include "STM32F4xx.h"
+void OUTPUT_init (void)
+{
+    // Enable GPIOB clock
+    RCC->AHB1ENR |= (1U << 1); // Enable clock for GPIOB
+
+    // --- PB8 configuration ---
+
+    // MODER8 = 01 (output)
+    GPIOB->MODER &= ~(3U <<16); // Clear MODER8 bits
+    GPIOB->MODER |= (1U <<16);  // Set MODER8 to 01 (output)
+
+    // OTYPER8 = 0 (push-pull)
+    GPIOB->OTYPER &= ~(1U <<8); // Set OTYPER8 to 0 (push-pull)
+
+    // OSPEEDR8 = 00 (low speed)
+    GPIOB->OSPEEDR &= ~(3U <<16); // Set OSPEEDR8 to 00 (low speed)
+
+    // PUPDR8 = 00 (no pull-up, no pull-down)
+    GPIOB->PUPDR &= ~(3U <<16); // Set PUPDR8 to 00 (no pull-up, no pull-down)  
+}
+/void LED_Blink_Fast(void)
+{
+    GPIOB->ODR ^= (1U << 8); // Toggle PB8
+    for (volatile int i = 0; i < 50000; i++); // Simple delay
+
+}
+uint8_t OUTPUT_init (void)
+{
+     GPIOB->ODR ^= (1U << 5); // Toggle PB8
+     for (volatile int i = 0; i < 50000; i++); // Simple delay
+}
