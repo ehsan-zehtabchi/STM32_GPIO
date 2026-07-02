@@ -44,6 +44,7 @@
 /* USER CODE BEGIN PV */
 uint8_t output_state_PB8 = 0; // Variable to hold the state of PB8
 uint8_t output_state_PC7 = 0; // Variable to hold the state of PC7
+uint8_t output_state_PA1 = 0; // Variable to hold the state of PA1
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -86,9 +87,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
-  LED_init(); // Initialize GPIO for LED
+  LED_init(); // Initialize GPIO PA5 for LED
   OUTPUT_init_PB8(); // Initialize GPIO PB8 as OUTPUT
   OUTPUT_init_PC7(); // Initialize GPIO PC7 as OUTPUT
+  OUTPUT_init_PA1(); // Initialize GPIO PA15 as OUTPUT
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,6 +101,7 @@ int main(void)
     //output_state_PB8 = OUTPUT_PB8_Blink_Fast(); // Blink the OUTPUT PB8 fast
     //output_state_PC7 = OUTPUT_PC7_Blink_Fast(); // Blink the OUTPUT PC7 fast
     Police_Blink_Fast(); // Blink the OUTPUT PC7 and PB8 in a police light pattern
+    output_state_PA1 = OUTPUT_init_PA1_Blink_Slow(); // Blink the OUTPUT PA0 slowly
     /* USER CODE END WHILE */
     
     /* USER CODE BEGIN 3 */
